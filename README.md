@@ -4,13 +4,12 @@ Azure Function hosted Swagger UI using blob storage and Function proxies
 
 ## Background
 
-While working on something else I cam across a potential need to host the swagger UI in an Azure Function.
-Don't ask me why, as to be honest not even sure it is really needed, but that being said it seemed like a
-great chance to experiment with Azure Function Proxies, allowing me to run static websites from BLOB storage and only pay while they are being served.
+Whilst working on something else, I came across a potential need to host the swagger UI in an Azure Function. Don't ask me why (not even sure it is really needed) but it seemed like a great chance to experiment with Azure Function Proxies, allowing me to run static websites from BLOB storage and only 
+pay while they are being served.
 
 ## Approach
 
-I wanted to be able to pull the latest files for "swagger-ui-dist" which is the standalone version of swagger without dependencies on npm modules and publish it without any modifications, this would allow me to produce something that was re-runnable without any custom hacks to get it working.
+I wanted to be able to pull the latest files for "swagger-ui-dist" (the standalone version of swagger) and publish it without any modifications. This would allow me to produce something that was re-runnable without any custom hacks to get it working.
 
 ## Setup
 
@@ -34,7 +33,7 @@ My setup is as follows:
 
 Login - currently to authenticate run az login, plan to extend script to use service principal
 
-jq output includes quotes within string values, I have included a work around but being a C# developer and not a bash pro I am sure there is a better way.
+jq output includes quotes within string values. I have included a work around, but being a C# developer and not a bash pro, I am sure there is a better way.
 
 ## Step 1
 
