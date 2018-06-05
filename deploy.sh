@@ -3,10 +3,19 @@
 container=$1
 functionname=$2
 subscription_id=$3
+backend_storage_account=$4
+backend_storage_container=$5
+backend_storage_access_key=$6
+backend_key=$7
 
 az account set --subscription $subscription_id
 
-terraform init
+terraform init \
+    -backend-config="storage_account_name=$backend_storage_account" \
+    -backend-config="container_name=$backend_storage_container" \
+    -backend-config="access_key=$backend_storage_access_key" \
+    -backend-config="key=$backend_key"
+
 terraform apply -auto-approve \
     -var "subscription_id=$subscription_id" \
     -var "container=$container" \

@@ -56,7 +56,7 @@ Run deploy script
 
 ```
 $ cd funkyswagger
-$ ./deploy.sh {containername} {functionname} {subscriptionid}
+$ ./deploy.sh {containername} {functionname} {subscriptionid} {backend_storage_account} {backend_storage_container} {backend_storage_access_key} {backend_key}
 ```
 
 {containername} is the blob container that is used to store the swagger ui files, need reference to this to update the Azure Function Proxies
@@ -64,6 +64,16 @@ $ ./deploy.sh {containername} {functionname} {subscriptionid}
 {functionname} what it says on the tin
 
 {subscriptionid} so both the Azure cli and terraform can run agaist the right subscription
+
+items for backend configuration
+
+{backend_storage_account} storage account name - account must exist
+
+{backend_storage_container} container name used to store state - container must exist
+
+{backend_storage_access_key} storage account access key
+
+{backend_key} key used to name blob eg. demo.funkyswagger.tfstate
 
 ## Step 4
 
